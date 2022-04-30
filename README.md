@@ -124,17 +124,17 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 Chessboard:
 
-![alt text][image1]
+![1-camera_cal](https://user-images.githubusercontent.com/68200593/166091572-a1d4bf87-c97c-474c-9c5e-2620002cbd75.png)
 
 
 Road test images - Original:
 
-![alt text][image2]
+![2-camera_cal_road_original](https://user-images.githubusercontent.com/68200593/166091588-e7610221-9b95-492d-8129-e78487404504.png)
 
 
 Road test images - Undistorted:
 
-![alt text][image3]
+![3-camera_cal_road_undistorted](https://user-images.githubusercontent.com/68200593/166091600-3ba614a4-c9f3-493b-bd75-eaec4012cf4d.png)
 
 
 ---
@@ -166,12 +166,12 @@ Final trapezoid ratios and car's hood cropping:
 * **height=0.4**, percentage of image height
 * **car_hood=45**, number of pixels to be cropped from bottom meant to get rid of car's hood
 
-![alt text][image4]
+![4-bird_eye](https://user-images.githubusercontent.com/68200593/166091617-f4cb0a84-71a9-43a1-af27-64f68ffc0411.png)
 
 
 Here are the source (src) and destination (dst) points:
 
-![alt text][image5]
+![5-src_dst_points](https://user-images.githubusercontent.com/68200593/166091621-ea2b36be-e0df-4e1d-96ea-a9e89a7c61d9.png)
 
 
 ---
@@ -207,18 +207,17 @@ Yellow-White color threshold that best generalized was:
 
 Bird's-eye view for Sobel absolute gradient X(scaled_sobel 15 to 100) and HSL(S channel 170 to 255) thresholding:
 
-![alt text][image6]
+![6-threshold_sx_hsl](https://user-images.githubusercontent.com/68200593/166091640-cd4278a4-dea1-4abe-8881-5d5c5153ca0d.png)
 
 
 Bird's-eye view for Yellow(HSV[90,100,100] to HSV[110,255,255]) and White(RGB200 to RGB255) thresholding:
 
-![alt text][image7]
+![7-threshold_yellow-white](https://user-images.githubusercontent.com/68200593/166091642-5f3d4116-4f15-4b53-bb84-472cfb9fd0e4.png)
 
 
 Bird's-eye view for Sobel absolute gradient X(scaled_sobel 15 to 100) Yellow(HSV[90,100,100] to HSV[110,255,255]) and White(RGB200 to RGB255) thresholding:
 
-![alt text][image8]
-
+![8-threshold_sx_yellow-white](https://user-images.githubusercontent.com/68200593/166091650-d4977dcc-ddc3-4f7b-a7bd-d1312af5135c.png)
 
 ---
 
@@ -240,7 +239,7 @@ After applying calibration, thresholding, and a perspective transform to a road 
 
 I first take a histogram along all the columns in the lower half of the image. (Code line 17)
 
-![alt text][image9]
+![9-histogram](https://user-images.githubusercontent.com/68200593/166091655-ea8d8a87-e19b-4717-a80a-602f45e351a2.png)
 
 
 With this histogram, I am adding up the pixel values along each column in the image. In my thresholded binary image, pixels are either 0 or 1, so the two most prominent peaks in this histogram will be good indicators of the x-position of the base of the lane lines. I use that as a starting point for where to search for the lines.
@@ -259,8 +258,7 @@ Polyfit and drawing are applied next.
 
 (code lines 15-98)
 
-![alt text][image10]
-
+![10-sliding_window](https://user-images.githubusercontent.com/68200593/166091659-c219eb5a-dd0f-46b5-9610-4f663dd4320e.png)
 
 
 #### 1.3 Non-Sliding Window (Window Search)
@@ -271,7 +269,7 @@ Polyfit and drawing are applied next.
 
 (code lines 121-158)
 
-![alt text][image11]
+![11-no_sliding_window](https://user-images.githubusercontent.com/68200593/166091670-6c284fe3-05f7-4074-978a-f6bcf4149d01.png)
 
 
 The green shaded area shows where it searches for the lines. So, once you know where the lines are in one frame of video, you can do a highly targeted search for them in the next frame. This is equivalent to using a customized region of interest for each frame of video, which helps to track the lanes through sharp curves and tricky conditions.
@@ -305,7 +303,8 @@ The radius of curvature is defined as follow:
 
 [Radius of Curvature - M. Bourne](http://www.intmath.com/applications-differentiation/8-radius-curvature.php)
 
-![alt text][image12]
+![12-curvature_theory](https://user-images.githubusercontent.com/68200593/166091678-c8e17d4d-db38-4520-ad0f-b26710c1d29d.png)
+
 
 The y values of the image increase from top to bottom, I chose to measure the radius of curvature closest to your vehicle, so we evaluate the formula above at the y value corresponding to the bottom of the image, or in Python, at yvalue = image.shape[0].
 
@@ -317,7 +316,7 @@ For future developments, we could derive a conversion from pixel space to world 
 
 Here is an example of my result on a test image:
 
-![alt text][image13]
+![13-radius-offset](https://user-images.githubusercontent.com/68200593/166091683-962cbbea-c018-4dfd-a169-d75af0821758.png)
 
 
 #### 2.2 Offset position
@@ -342,7 +341,7 @@ The good or bad frame selection is already implemented as described above. For t
 
 ### 4. Road Test Images
 
-![alt text][image14]
+![14-images-pipeline](https://user-images.githubusercontent.com/68200593/166092053-8d7924a1-228d-47ab-92e7-d8e95422bdb5.jpg)
 
 
 ---
