@@ -7,17 +7,17 @@ def filter_WhiteYellow(image):
     Filter the image, showing only a range of white and yellow
     """
     # Filter White
-    threshold = 200 
-    high_threshold = np.array([255, 255, 255]) #Bright white
-    low_threshold = np.array([threshold, threshold, threshold]) #Soft White
+    threshold = 200
+    high_threshold = np.array([255, 255, 255])  # Bright white
+    low_threshold = np.array([threshold, threshold, threshold])  # Soft White
     mask = cv2.inRange(image, low_threshold, high_threshold)
     white_img = cv2.bitwise_and(image, image, mask=mask)
 
     # Filter Yellow
-    hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV) #Changing Color-space, HSV is better for object detection
-    #For HSV, Hue range is [0,179], Saturation range is [0,255] and Value range is [0,255]. 
-    high_threshold = np.array([110,255,255]) #Bright Yellow
-    low_threshold = np.array([50,50,50]) #Soft Yellow   
+    hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)  # Changing Color-space, HSV is better for object detection
+    # For HSV, Hue range is [0,179], Saturation range is [0,255] and Value range is [0,255].
+    high_threshold = np.array([110, 255, 255])  # Bright Yellow
+    low_threshold = np.array([50, 50, 50])  # Soft Yellow
     mask = cv2.inRange(hsv_img, low_threshold, high_threshold)
     yellow_img = cv2.bitwise_and(image, image, mask=mask)
 
