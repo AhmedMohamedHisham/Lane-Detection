@@ -16,7 +16,7 @@ road_straight_image_filename = 'straight_lines2.jpg'
 road_straight_warped_image_dir = 'output/bird_eye_test'
 
 # Where you want to save the transformation matrices (M,Minv)?
-M_Minv_output_dir = 'output/camera_cal'
+M_Minv_output_dir = 'output/camera calibration'
 
 # Play with trapezoid ratio until you get the proper bird's eye lane lines projection
 # bottom_width = percentage of image width
@@ -127,9 +127,7 @@ def get_perspective_and_pickle_M_Minv():
     cv2.imwrite(write_name1, warped)
 
     # Save the transformation matrices for later use
-    dist_pickle = {}
-    dist_pickle["M"] = M
-    dist_pickle["Minv"] = Minv
+    dist_pickle = {"M": M, "Minv": Minv}
     write_name2 = join(M_Minv_output_dir, 'perspective_trans_matrices.p')
     pickle.dump(dist_pickle, open(write_name2, "wb"))
 
