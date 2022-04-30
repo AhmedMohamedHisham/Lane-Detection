@@ -2,7 +2,7 @@
 
 ## Computer vision with OpenCV
 
-### Join me on this exciting journey to apply advanced computer vision techniques to identify lane lines. Camera calibration,  undistortion, color threshold, perspective transformation, lane detection and image annotation.
+### We will apply advanced computer vision techniques to identify lane lines. Camera calibration,  undistortion, color threshold, perspective transformation, lane detection and image annotation.
 
 
 #### When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are, will act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
