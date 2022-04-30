@@ -316,7 +316,7 @@ For future developments, we could derive a conversion from pixel space to world 
 
 Here is an example of my result on a test image:
 
-![13-radius-offset](https://user-images.githubusercontent.com/68200593/166091683-962cbbea-c018-4dfd-a169-d75af0821758.png)
+![13-radius-offset](https://user-images.githubusercontent.com/68200593/166092173-1972257f-d05d-4bb6-8b97-4987c7ae97d1.png)
 
 
 #### 2.2 Offset position
