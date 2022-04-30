@@ -96,7 +96,7 @@ Open the **load_parameters.py** and set the proper income directories (code line
 Default configuration will:
 * Read camera coefficients and perspective matrices from: `output/camera_cal`
 
-Open the **main.py** and set the proper output directory, video and images source (code lines 291-318).
+Open the **main.py** and set the proper output directory, video and images source (code lines 284-312).
 
 Default configuration will:
 * Ask you whether you want to process on an image or a video
