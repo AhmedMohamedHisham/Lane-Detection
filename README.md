@@ -24,22 +24,12 @@ The goals/ steps of this project are the following:
 * Warp the detected lane boundaries back onto the original image.
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
 
-[//]: # (Image References)
-
-[image1]: ./my_images/1-camera_cal.png "Undistorted Chessboard"
-[image2]: ./my_images/2-camera_cal_road_original.png "Road Images - Original"
-[image3]: ./my_images/3-camera_cal_road_undistorted.png "Road Images - Undistorted"
-[image4]: ./my_images/4-bird_eye.png "Birds-eye View"
-[image5]: ./my_images/5-src_dst_points.png "Transformation - Source (src) and Destination (dst) points"
-[image6]: ./my_images/6-threshold_sx_hsl.png "Gradient & Color Thresholding - Sx and HSL Saturation"
-[image7]: ./my_images/7-threshold_yellow-white.png "Color Thresholding - Yellow-White"
-[image8]: ./my_images/8-threshold_sx_yellow-white.png "Gradient & Color Thresholding - Sx and Yellow-White"
-[image9]: ./my_images/9-histogram.png "Peak Detection by Histogram"
-[image10]: ./my_images/10-sliding_window.png "Sliding Window Method"
-[image11]: ./my_images/11-no_sliding_window.png "Window Search"
-[image12]: ./my_images/12-curvature_theory.png "Radius of Curvature Theory"
-[image13]: ./my_images/13-radius-offset.png "Radius and Offset Annotations"
-[image14]: ./my_images/14-images-pipeline.png "Pipeline on Images"
+## Dependencies
+* Python 3.10
+* Numpy
+* OpenCV-Python
+* Moviepy
+* Pygame
 
 
 ---
