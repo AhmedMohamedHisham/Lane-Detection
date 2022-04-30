@@ -8,7 +8,7 @@ from os.path import join, basename
 camera_cal_dir_glob = 'camera calibration/calibration*.jpg'
 
 # Where you want to save the calibration outputs?
-calibration_outputs_dir = 'output_images/camera calibration'
+calibration_outputs_dir = 'output/camera calibration'
 
 # Filename to save the camera calibration result for later use (mtx, dist)
 calibration_mtx_dist_filename = 'camera_cal_dist_pickle.p'
